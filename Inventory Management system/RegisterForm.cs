@@ -46,6 +46,7 @@ namespace Inventory_Management_system
                 {
                     try
                     {
+                        connect.Close();
                         connect.Open();
 
                         string checkUsername = "SELECT * FROM users WHERE username = @usern";

@@ -11,7 +11,7 @@ namespace Inventory_Management_system
     internal class CategoriesData
     {
         public int ID { get; set; }
-        public string Category { get; set; }
+        public string Category { get; set; } 
         public string Date { get; set; }
         public List<CategoriesData> AllCategoriesData()
         {
@@ -20,7 +20,7 @@ namespace Inventory_Management_system
             SqlConnection connect
                 = new SqlConnection("Data Source=LAPTOP-FI1733H9\\SQLEXPRESS;Initial Catalog=InventoryMgtSystem;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
             {
-
+                connect.Close();
                 connect.Open();
                 string selectData = "SELECT * FROM categories";
 

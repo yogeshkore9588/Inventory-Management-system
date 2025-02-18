@@ -27,9 +27,19 @@ namespace Inventory_Management_system
         public AdminAddUser()
         {
             InitializeComponent();
+
             displayAllUsersData();
         }
 
+        public void refreshData()
+        {
+            if(InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayAllUsersData();
+        }
         private void addUsers_addBtn_Click(object sender, EventArgs e)
         {
             if (addUsers_username.Text == "" || addUsers_password.Text == ""
@@ -43,6 +53,7 @@ namespace Inventory_Management_system
                 {
                     try
                     {
+                        connect.Close();
                         connect.Open();
 
                         string checkUsername = "SELECT * FROM users WHERE username = @usern";
@@ -133,6 +144,7 @@ namespace Inventory_Management_system
                     {
                         try
                         {
+                            connect.Close();
                            connect.Open();
 
                             string updateData = "UPDATE users SET username = @usern,"+" password = @pass, role = @role, status = @status WHERE id = @id";
@@ -227,6 +239,7 @@ namespace Inventory_Management_system
                     {
                         try
                         {
+                            connect.Close();
                             connect.Open();
 
                             string updaData = "DELETE FROM users WHERE id = @id";

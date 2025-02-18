@@ -32,19 +32,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.dashboard_totalIncome = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dashboard_TI = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dashboard_AC = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dashboard_AU = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.dashboard_totalIncome);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Location = new System.Drawing.Point(786, 30);
             this.panel5.Name = "panel5";
@@ -96,15 +96,15 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Total Income";
             // 
-            // label9
+            // dashboard_totalIncome
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(106, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 16);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "$0.00";
+            this.dashboard_totalIncome.AutoSize = true;
+            this.dashboard_totalIncome.ForeColor = System.Drawing.Color.White;
+            this.dashboard_totalIncome.Location = new System.Drawing.Point(106, 27);
+            this.dashboard_totalIncome.Name = "dashboard_totalIncome";
+            this.dashboard_totalIncome.Size = new System.Drawing.Size(38, 16);
+            this.dashboard_totalIncome.TabIndex = 4;
+            this.dashboard_totalIncome.Text = "$0.00";
             // 
             // pictureBox4
             // 
@@ -120,7 +120,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.dashboard_TI);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Location = new System.Drawing.Point(533, 30);
             this.panel4.Name = "panel4";
@@ -138,15 +138,15 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Today\'s Income";
             // 
-            // label7
+            // dashboard_TI
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(106, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "$0.00";
+            this.dashboard_TI.AutoSize = true;
+            this.dashboard_TI.ForeColor = System.Drawing.Color.White;
+            this.dashboard_TI.Location = new System.Drawing.Point(106, 27);
+            this.dashboard_TI.Name = "dashboard_TI";
+            this.dashboard_TI.Size = new System.Drawing.Size(38, 16);
+            this.dashboard_TI.TabIndex = 4;
+            this.dashboard_TI.Text = "$0.00";
             // 
             // pictureBox3
             // 
@@ -162,7 +162,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.dashboard_AC);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Location = new System.Drawing.Point(280, 30);
             this.panel3.Name = "panel3";
@@ -180,15 +180,15 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "All Customers";
             // 
-            // label5
+            // dashboard_AC
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(109, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "O";
+            this.dashboard_AC.AutoSize = true;
+            this.dashboard_AC.ForeColor = System.Drawing.Color.White;
+            this.dashboard_AC.Location = new System.Drawing.Point(109, 27);
+            this.dashboard_AC.Name = "dashboard_AC";
+            this.dashboard_AC.Size = new System.Drawing.Size(17, 16);
+            this.dashboard_AC.TabIndex = 4;
+            this.dashboard_AC.Text = "O";
             // 
             // pictureBox2
             // 
@@ -204,7 +204,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(113)))), ((int)(((byte)(73)))));
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dashboard_AU);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(27, 30);
             this.panel2.Name = "panel2";
@@ -222,16 +222,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "All Users";
             // 
-            // label2
+            // dashboard_AU
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(108, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "O";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.dashboard_AU.AutoSize = true;
+            this.dashboard_AU.ForeColor = System.Drawing.Color.White;
+            this.dashboard_AU.Location = new System.Drawing.Point(108, 27);
+            this.dashboard_AU.Name = "dashboard_AU";
+            this.dashboard_AU.Size = new System.Drawing.Size(17, 16);
+            this.dashboard_AU.TabIndex = 1;
+            this.dashboard_AU.Text = "O";
+            this.dashboard_AU.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -245,8 +245,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Controls.Add(this.label1);
             this.panel6.Location = new System.Drawing.Point(18, 266);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1067, 446);
@@ -264,14 +264,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 342);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(1002, 357);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // AdminDashboard
             // 
@@ -310,18 +311,18 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label dashboard_AU;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label dashboard_totalIncome;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label dashboard_TI;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label dashboard_AC;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

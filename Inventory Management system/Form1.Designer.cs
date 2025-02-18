@@ -157,7 +157,7 @@
             this.login_password.PasswordChar = '*';
             this.login_password.Size = new System.Drawing.Size(243, 30);
             this.login_password.TabIndex = 2;
-            this.login_password.Text = "yogesh@123";
+            this.login_password.Text = "admin@123\r\n";
             this.login_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // login_username
@@ -167,7 +167,7 @@
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(243, 30);
             this.login_username.TabIndex = 1;
-            this.login_username.Text = "yogesh";
+            this.login_username.Text = "admin";
             this.login_username.TextChanged += new System.EventHandler(this.login_username_TextChanged);
             // 
             // label1

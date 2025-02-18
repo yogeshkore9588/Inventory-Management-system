@@ -22,6 +22,16 @@ namespace Inventory_Management_system
 
             displayCategoriesData();
         }
+
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayCategoriesData();
+        }
         public void displayCategoriesData()
         {
             CategoriesData cData = new CategoriesData();
@@ -41,6 +51,7 @@ namespace Inventory_Management_system
                 {
                     try
                     {
+                        connect.Close();
                         connect.Open();
 
                         string checkCat = "SELECT * FROM categories WHERE category = @cat";
@@ -136,6 +147,7 @@ namespace Inventory_Management_system
                     {
                         try
                         {
+                            connect.Close();
                             connect.Open();
 
                             string updateData = "UPDATE categories SET category = @cat WHERE id = @id";
@@ -181,6 +193,7 @@ namespace Inventory_Management_system
                     {
                         try
                         {
+                            connect.Close();
                             connect.Open();
 
                             string removeData = "DELETE FROM categories WHERE id = @id";

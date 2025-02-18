@@ -51,7 +51,7 @@ namespace Inventory_Management_system
                         apData.Category = reader["category"].ToString();
                         apData.Price = reader["price"].ToString();
                         apData.Stock = reader["stock"].ToString();
-                        apData.ImagePath = reader["image_path"].ToString();
+                        apData.ImagePath = reader["image_patch"].ToString();
                         apData.Status = reader["status"].ToString();
                         apData.Date = reader["date_insert"].ToString();
                         listData.Add(apData);
@@ -59,6 +59,47 @@ namespace Inventory_Management_system
                 }
             }
             return listData;
+        }
+        public List<AddProductsData> AllAvailableProducts()
+        {
+            List<AddProductsData> listData = new List<AddProductsData>();
+
+            SqlConnection connect
+                        = new SqlConnection(@"Data Source=LAPTOP-FI1733H9\\SQLEXPRESS;Initial Catalog=InventoryMgtSystem;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            {
+                connect.Close();
+                connect.Open();
+                string selectDate = "SELECT * FROM products1 WHERE status = @status";
+
+                using (SqlCommand cmd = new SqlCommand(selectDate, connect))
+                {
+                    cmd.Parameters.AddWithValue("@status", "Available");
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        AddProductsData apData = new AddProductsData();
+
+                        apData.Id = (int)reader["id"];
+                        apData.ProdID = reader["prod_id"].ToString();
+                        apData.ProdName = reader["prod_name"].ToString();
+                        apData.Category = reader["category"].ToString();
+                        apData.Price = reader["price"].ToString();
+                        apData.Stock = reader["stock"].ToString();
+                        apData.ImagePath = reader["image_patch"].ToString();
+                        apData.Status = reader["status"].ToString();
+                        apData.Date = reader["date_insert"].ToString();
+
+                        listData.Add(apData);
+                    }
+                }
+            }
+            return listData;
+        }
+
+        internal void Show()
+        {
+            throw new NotImplementedException();
         }
     }
 }

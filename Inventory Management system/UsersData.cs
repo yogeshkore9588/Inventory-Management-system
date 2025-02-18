@@ -31,7 +31,7 @@ namespace Inventory_Management_system
             SqlConnection connect
             = new SqlConnection("Data Source=LAPTOP-FI1733H9\\SQLEXPRESS;Initial Catalog=InventoryMgtSystem;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
             {
-                  
+                connect.Close();  
                 connect.Open();
                 string selectDate = "SELECT * FROM Users";
 

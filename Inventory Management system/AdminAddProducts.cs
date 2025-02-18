@@ -22,6 +22,16 @@ namespace Inventory_Management_system
             displayCategories();
             displayAllProducts();
         }
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayCategories();
+            displayAllProducts();
+        }
         public AdminAddProducts()
         {
             InitializeComponent();
@@ -64,6 +74,7 @@ namespace Inventory_Management_system
             {
                 try
                 {
+                    connect.Close ();
                     connect.Open();
 
                     string selectData = "SELECT * FROM categories";
@@ -133,7 +144,7 @@ namespace Inventory_Management_system
 
                                 string directoryPath = Path.GetDirectoryName(path);
 
-                                if (!Directory.Exists(directoryPath))
+                                if (!Directory.Exists(directoryPath))// if not exist
                                 {
                                     Directory.CreateDirectory(directoryPath);
                                 }
@@ -292,7 +303,7 @@ namespace Inventory_Management_system
                 try
                 {
                     if(imagepath != null)
-                    { 
+                    {
                         addProducts_imageView.Image = Image.FromFile(imagepath);
                     }
                 }
@@ -312,7 +323,6 @@ namespace Inventory_Management_system
             }
             else
             {
-            
                     try
                     {
                         connect.Close();
@@ -339,7 +349,6 @@ namespace Inventory_Management_system
                     {
                         connect?.Close();
                     }
-                
             }    
         }
 

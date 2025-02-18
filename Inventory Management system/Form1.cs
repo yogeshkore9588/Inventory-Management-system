@@ -14,6 +14,7 @@ namespace Inventory_Management_system
 {
     public partial class Form1 : Form
     {
+        public static string username;
         SqlConnection connect
             = new SqlConnection("Data Source=LAPTOP-FI1733H9\\SQLEXPRESS;Initial Catalog=InventoryMgtSystem;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
         public Form1()
@@ -65,29 +66,53 @@ namespace Inventory_Management_system
             {
                 try
                 {
+                    connect.Close();
                     connect.Open();
 
-                    string selectData = "SELECT * FROM users WHERE username = @usern AND password = @pass";
+                    string selectData = "SELECT COUNT (*) FROM users WHERE username = @usern AND password = @pass AND status = @status";
 
                     using (SqlCommand cmd = new SqlCommand(selectData, connect))
                     {
                         cmd.Parameters.AddWithValue("@usern", login_username.Text.Trim());
                         cmd.Parameters.AddWithValue("@pass", login_password.Text.Trim());
+                        cmd.Parameters.AddWithValue("@status", "Active");
 
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        DataTable table = new DataTable();
+                        int rowCount = (int)cmd.ExecuteScalar();
 
-                        adapter.Fill(table);
+                        //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        //DataTable table = new DataTable();
 
-                        if (table.Rows.Count > 0)
+                        //adapter.Fill(table);
+
+                        if (rowCount > 0)
                         {
-                            MessageBox.Show("Login successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string selectRole = "SELECT role FROM users WHERE username = @username AND password = @pass";
 
-                            MainForm mForm = new MainForm();
-                            mForm.Show();
-                          
+                            using (SqlCommand getRole = new SqlCommand(selectRole, connect))
+                            {
+                                getRole.Parameters.AddWithValue("@username", login_username.Text.Trim());
+                                getRole.Parameters.AddWithValue("@pass", login_password.Text.Trim());
 
-                            this.Hide();
+                                string userRole = getRole.ExecuteScalar() as string;
+
+                                MessageBox.Show("Login successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                if (userRole == "Admin")
+                                {
+
+                                    MainForm mForm = new MainForm();
+                                    mForm.Show();
+
+                                    this.Hide(); 
+                                }
+                                else if(userRole == "Cashier")
+                                {
+                                    CashierMainForm cmform = new CashierMainForm();
+                                    cmform.Show();
+
+                                    this.Hide();
+                                }
+                            }
                         }
                         else
                         {
