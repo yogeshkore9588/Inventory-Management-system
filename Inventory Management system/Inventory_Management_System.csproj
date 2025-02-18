@@ -131,6 +131,7 @@
     </Compile>
     <Compile Include="CategoriesData.cs" />
     <Compile Include="CustomersData.cs" />
+    <Compile Include="demoClass.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
